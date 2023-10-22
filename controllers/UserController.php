@@ -24,7 +24,7 @@
             $dadosUser = $this->getUserName();
 
             // verifica se token está válido
-            $this->validarToken();
+            $_SESSION['token'] == $_COOKIE['token'] ? $this->validarToken() : '';
             
             // Chama view dashboard
             require_once('./views/dashboard.php');

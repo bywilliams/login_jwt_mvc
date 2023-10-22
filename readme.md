@@ -11,8 +11,8 @@ Projeto feito totalmente em PHP 8.2 sem uso de nehnhum framework tanto no fronte
 * Validação de token e tempo de experição
 * CRUD com POO e MVC
 * CSRF token nos formulários
-* Validação de força de senha
-* Validação de  existência de usuário
+* Validação de força de senha e encriptação
+* Validação de existência de usuário
 * Paginação de resultados
 * Direcionamento para rotas e controladores dinâmico 
 * Redirecionamento para página 404 em caso de rota inexistente

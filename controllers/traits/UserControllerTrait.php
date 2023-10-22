@@ -92,7 +92,9 @@
 
         function validarToken ()
         {
-            $token =  $_SESSION['token'];
+            $_SESSION['token'] = $_COOKIE['token'];
+
+            $token = $_SESSION['token'];
 
             $tokenArray = explode('.', $token);
 
