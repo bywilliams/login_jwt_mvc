@@ -7,3 +7,5 @@
 </script>
 </body>
 </html>
+
+<?php $_SESSION['token'] = $_COOKIE['token']; ?>

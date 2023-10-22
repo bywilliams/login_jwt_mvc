@@ -20,7 +20,8 @@
         function getAll($inicio, $itensPorPagina)
         {
             // Obtem os registros da página atual
-            $sqlSelect = $this->connection->query("SELECT * FROM $this->table LIMIT $inicio, $itensPorPagina");
+            $sqlSelect = $this->connection->query("SELECT id, name, email, created_at, updated_at 
+                                                    FROM $this->table LIMIT $inicio, $itensPorPagina");
             $resultQuery = $sqlSelect->fetchAll(PDO::FETCH_OBJ);
 
             // Consulta para obter o total de registros na tabela

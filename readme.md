@@ -15,6 +15,7 @@ Projeto feito totalmente em PHP 8.2 sem uso de nehnhum framework tanto no fronte
 * Validação de  existência de usuário
 * Paginação de resultados
 * Direcionamento para rotas e controladores dinâmico 
+* Redirecionamento para página 404 em caso de rota inexistente
 ***
 
 ### Explicação do projeto 
