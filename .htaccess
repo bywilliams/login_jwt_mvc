@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+ErrorDocument 404 /test_code_mvc_jwt/views/404.php

@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    border-radius: 0 10px 10px 0;
+    top: 0;
+    left: -250px; /* Inicialmente, esconde a sidebar */
+    background-color: #186F65;
+    padding-top: 50px;
+    transition: left 0.3s; /* Adiciona uma transição suave para o efeito de deslizamento */
+}
+
+.sidebar.active {
+    left: 0; /* Mostra a sidebar quando o menu hambúrguer é clicado */
+}
+
+.sidebar a {
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: #999;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 2;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.user-info {
+    font-size: 16px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.welcome-message {
+    color: #888;
+}
+
+.sidebar a:hover {
+    background-color: #999;
+}
+
+
+/* ---------------------------------------------------
+    END SIDEBAR STYLE
+----------------------------------------------------- */
+
+/* ---------------------------------------------------
+    HOME CONTENT DASHBOARD STYLE
+----------------------------------------------------- */
+
+.home_content {
+    width: 1138px;
+    margin: 0 auto;
+    padding: 20px;
+    transition: margin-left 0.3s; /* Adiciona uma transição suave para o conteúdo quando a sidebar é mostrada/oculta */
+}
+
+.home_content h1 {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color:#000;
+    padding: 5px;
+    text-align: center;
+}
+
+.content .add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #0dcf68;
+}
+.add .button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid #0dcf68;
+}
+
+.add .button:hover {
+    background: #0dcf68;
+    color: #fff;
+}
+
+.content-table  {
+    width: 100%;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.content i {
+    font-size: 25px;
+}
+
+.content-table .fa-pen-to-square {
+    color: #F99417;
+}
+
+.content-table .fa-trash { 
+    color: #C70039;
+}
+
+.content .fa-plus { 
+    color: #0dcf68;
+}
+
+/* STATUS MESSAGE */
+.status-message {
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.error {
+    background-color: #FF5733;
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------
+    END HOME CONTENT DASHBOARD STYLE
+----------------------------------------------------- */
+
+/* ---------------------------------------------------
+    MODAL'S STYLE
+----------------------------------------------------- */
+.open-modal-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+}
+
+.modal-content .close{ 
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #ccc;
+    padding: 13px 0;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.modal-content .close:hover{ 
+    background: #333;
+    color: #fff;
+} 
+
+/* Estilos para fechar o modal */
+.close-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+input[type=text], input[type=email], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    font-size: 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* ---------------------------------------------------
+    END MODAL'S STYLE
+----------------------------------------------------- */
+
+/* ---------------------------------------------------
+    MEDIA QUERIES
+----------------------------------------------------- */
+@media screen and (max-width: 768px) {
+}
