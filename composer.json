@@ -1,4 +1,16 @@
 {
+    "name": "william/test_code_mvc_jwt",
+    "autoload": {
+        "psr-4": {
+            "William\\TestCodeMvcJwt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bywilliams",
+            "email": "willian.seu@gmail.com"
+        }
+    ],
     "require": {
         "vlucas/phpdotenv": "^5.5"
     }

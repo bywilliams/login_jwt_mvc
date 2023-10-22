@@ -22,7 +22,7 @@
         {
             $userController = new UserController();
             $dadosUser = $userController->getUserName();
-          
+
             $userController->validarToken();
             require_once('./views/dashboard.php');
         }

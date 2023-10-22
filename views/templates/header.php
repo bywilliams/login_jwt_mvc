@@ -15,14 +15,15 @@
     </div>
 
     <aside class="sidebar" id="sidebar">
+        <input type="text" name="search" id="search" placeholder="buscar consulta">
         <div class="user-profile">
             <div class="user-info">
                 <div class="user-name"><?= isset($dadosUser->username) ? $dadosUser->username : '' ?></div>
-                <div class="welcome-message">Bem-vindo!</div>
+                <div class="welcome-message">Bem-vindo (a)!</div>
             </div>
         </div>
         <a href="./?route=dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
-        <?php if(isset($dadosUser->nivel_acesso) && $dadosUser->nivel_acesso == 'Administrador'): ?>
+        <?php if(isset($dadosUser->nivel_acesso) && strtolower($dadosUser->nivel_acesso) == 'administrador'): ?>
             <a href="./?route=usuarios"><i class="fa-solid fa-people-group"></i> Usuários</a>
         <?php endif; ?>
         <a href="./?route=logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>

@@ -1,4 +1,8 @@
 <?php
+    require_once('./vendor/autoload.php');
+
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '/../../.env');
+    $dotenv->load();
     
     trait UserControllerTrait
     {
@@ -33,7 +37,7 @@
                 require_once ('./views/index.php');
                 exit;
             }
-           
+
             try 
             {
                 $user = new UserController();
@@ -74,10 +78,8 @@
             $header = base64url_encode(json_encode($header));
             $payload = base64url_encode(json_encode($payload));
 
-            $key = "247d5b9660779649ca640b68cad1535381aba200e911f4b272624da92be4d296";
-
             //gerar assinatura
-            $signature = hash_hmac('sha256', "$header.$payload", $key);
+            $signature = hash_hmac('sha256', "$header.$payload", $_ENV['KEY']);
 
             $signature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
 
@@ -101,10 +103,8 @@
             $payload = $tokenArray[1];
             $provided_signature = $tokenArray[2];
 
-            $chave = "247d5b9660779649ca640b68cad1535381aba200e911f4b272624da92be4d296";
-
             // Calcula a assinatura esperada
-            $expectedSignature = hash_hmac('sha256', "$header.$payload", $chave);
+            $expectedSignature = hash_hmac('sha256', "$header.$payload", $_ENV['KEY']);
             
             // codifica para base64
             $expectedSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($expectedSignature));
