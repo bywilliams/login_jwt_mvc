@@ -16,6 +16,7 @@ Projeto feito totalmente em PHP 8.2 sem uso de nehnhum framework tanto no fronte
 * Paginação de resultados
 * Direcionamento para rotas e controladores dinâmico 
 * Redirecionamento para página 404 em caso de rota inexistente
+* Níveis de acesso
 ***
 
 ### Explicação do projeto 
