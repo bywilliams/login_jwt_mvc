@@ -5,10 +5,16 @@ Este projeto é resultado de um test code.
 
 ***
 Projeto feito totalmente em PHP 8.2 sem uso de nehnhum framework tanto no frontend quando no backend. 
-* Login com auetnticação JWT
+
+### **Funcionalidades**
+* Login com autenticação JWT
+* Validação de token e tempo de experição
 * CRUD com POO e MVC
 * CSRF token nos formulários
-### **Intuito**
+* Validação de força de senha
+* Validação de  existência de usuário
+* Paginação de resultados
+* Direcionamento para rotas e controladores dinâmico 
 ***
 
 ### Explicação do projeto 
@@ -47,3 +53,16 @@ Agora terá explicação das variáveis utilizadas.
 
 ### Gif da aplicação;
 ![jwt](views/assets/jwt.gif)
+
+## Clone esse projeto
+<br>
+<strong> Pré requisitos </strong>  <br>
+
+- [Composer](https://getcomposer.org)
+- [dotenv](https://packagist.org/packages/vlucas/phpdotenv)
+ 
+ <strong>Instalação</strong><br>
+
+$ git clone https://github.com/bywilliams/login_jwt_mvc.git
+<br>
+<br>

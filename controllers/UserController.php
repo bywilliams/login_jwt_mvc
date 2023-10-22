@@ -15,25 +15,42 @@
 
         function index()
         {
+            // Chama view login
             require_once('./views/index.php');
         }
 
         function dashboard()
         {
-            $userController = new UserController();
-            $dadosUser = $userController->getUserName();
+            $dadosUser = $this->getUserName();
 
-            $userController->validarToken();
+            // verifica se token está válido
+            $this->validarToken();
+            
+            // Chama view dashboard
             require_once('./views/dashboard.php');
         }
 
         function listUsers ()
         {
-            $userController = new UserController();
-            $dadosUser = $userController->getUserName();
+            $dadosUser = $this->getUserName();
+            $this->validarToken();
 
-            $resultData = $this->model->getAll();
-            //var_dump($resultData); exit;
+            // Ler o parâmetro da página da URL
+            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            $itensPerPage = 5;
+            
+            // Calcula o índice de inicio e fim dos dados para a pagina atual
+            $inicio = ($page - 1) * $itensPerPage;
+
+            $paginateData = $this->model->getAll($inicio, $itensPerPage);
+            $resultData = $paginateData['data'];
+
+            // Total de registros na tabela
+            $totalRegistros = $paginateData['totalRegistros'];
+
+            // Calcular o número total de páginas
+            $totalPaginas = ceil($totalRegistros / $itensPerPage);
+
             require_once ('./views/usuarios.php');
         }
 
@@ -41,6 +58,7 @@
         {
             // Checa se o @crsf token do form existe e é igual ao gerado na session
             if (!isset($_POST["csrf_token"]) || $_POST["csrf_token"] !== $_SESSION["csrf_token"]) {
+                setcookie('token', "");
                 require_once ('./views/dashboard.php');
                 exit;
             }
@@ -64,9 +82,9 @@
                 $_SESSION['status'] = 'error';
                 $_SESSION['status_message'] = 'Usuário já existe!';
             }
-
-            $userController = new UserController();
-            $userController->listUsers();
+            
+            // Chama view usuários
+            $this->listUsers();
         }
 
         function update ()
@@ -76,11 +94,12 @@
                 exit;
             }
 
+            // Realiza update
             $formData = $_POST;
             $this->model->update($formData);
 
-            $userController = new UserController();
-            $userController->listUsers();
+            // chama view usuários
+            $this->listUsers();
         }
 
         function delete ()
@@ -90,11 +109,12 @@
                 exit;
             }
 
+            // Realiza delete
             $id = $_POST['id'];
             $this->model->delete($id);
 
-            $userController = new UserController();
-            $userController->listUsers();
+            // Chama view usuários
+            $this->listUsers();
         }       
 
         function getUserName ()

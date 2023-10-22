@@ -7,7 +7,6 @@
     trait UserControllerTrait
     {
 
-
         function validarUser ()
         {
              // Checa se o @crsf token do form existe e é igual ao gerado na session
@@ -40,8 +39,7 @@
 
             try 
             {
-                $user = new UserController();
-                $user->gerarToken($email, $userFound->name, $userFound->nivel_acesso);                
+                $this->gerarToken($email, $userFound->name, $userFound->nivel_acesso);                
             } 
             catch (Exception $e) 
             {
@@ -88,8 +86,7 @@
             setcookie('token', $token);
             $_SESSION['token'] = $token;
 
-            $user = new UserController();
-            $user->dashboard();
+            $this->dashboard();
             
         }
 

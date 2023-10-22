@@ -2,7 +2,6 @@
 require_once('templates/header.php'); 
 require_once('utils/gerar_csrf_token.php');
 ?>
-
 <main class="home_content">
 
     <h1>Usuário</h1>
@@ -62,6 +61,14 @@ require_once('utils/gerar_csrf_token.php');
                 </tbody>
             </table>
         </section>
+
+        <?php if($totalPaginas > 1): ?>
+        <div class="pagination">
+            <?php for ($i = 1; $i <= $totalPaginas; $i++) : ?>
+                <a href="?route=usuarios&page=<?= $i ?>" class="<?= $_GET['page'] == $i ? 'active' : '' ?>"><?= $i ?></a>
+            <?php endfor; ?>
+        </div>
+        <?php endif; ?>
         
     </div>
 </main>

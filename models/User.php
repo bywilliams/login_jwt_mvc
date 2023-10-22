@@ -17,11 +17,20 @@
             $this->table = 'users';
         }
 
-        function getAll()
+        function getAll($inicio, $itensPorPagina)
         {
-            $sqlSelect = $this->connection->query("SELECT * FROM $this->table");
+            // Obtem os registros da página atual
+            $sqlSelect = $this->connection->query("SELECT * FROM $this->table LIMIT $inicio, $itensPorPagina");
             $resultQuery = $sqlSelect->fetchAll(PDO::FETCH_OBJ);
-            return $resultQuery;
+
+            // Consulta para obter o total de registros na tabela
+            $sqlCount = $this->connection->query("SELECT COUNT(*) as total FROM $this->table");
+            $totalRegistros = $sqlCount->fetch(PDO::FETCH_ASSOC)['total'];
+            
+            return array(
+                'data' => $resultQuery,
+                'totalRegistros' => $totalRegistros
+            );
         }
 
         function checkUser($email) 
@@ -51,7 +60,7 @@
             $sqlCreate->bindParam(":name", $formData['name'],  PDO::PARAM_STR);
             $sqlCreate->bindParam(":email", $formData['email'], PDO::PARAM_STR);
             $sqlCreate->bindParam(":password", $password, PDO::PARAM_STR);
-
+            
             try 
             {
                 $sqlCreate->execute();

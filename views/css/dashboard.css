@@ -311,6 +311,40 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination a.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
 /* ---------------------------------------------------
     END MODAL'S STYLE
 ----------------------------------------------------- */
@@ -318,5 +352,54 @@ input[type=submit]:hover {
 /* ---------------------------------------------------
     MEDIA QUERIES
 ----------------------------------------------------- */
+
 @media screen and (max-width: 768px) {
-}
+    .modal-content {
+        width: 60%;
+        margin: 25% auto;
+    }
+
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+    
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: center;
+    }
+    
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    table td:last-child {
+        border-bottom: 0;
+    }
+  }
+  
