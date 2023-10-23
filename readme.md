@@ -54,7 +54,7 @@ Agora terá explicação das variáveis utilizadas.
 > Basicamente uma rota faz a requisição de uma view, neste momento o controlador entra em ação e chama um model ou aplica alguma regra de negócio, o model faz uma requisição para banco de dados que devolve uma resposta, que por sua vez  entrega de volta ao controlador e o controlador chama a view passando os dados.
 
 ### Gif da aplicação;
-![jwt](views/assets/jwt.gif)
+![jwt](views/assets/jwt_app.gif)
 
 ## Clone esse projeto
 <br>
@@ -68,7 +68,6 @@ Agora terá explicação das variáveis utilizadas.
 $ git clone https://github.com/bywilliams/login_jwt_mvc.git
 <br>
 
-Video apresentação: https://www.youtube.com/watch?v=oKp6Xn-8vmg&ab_channel=WilliamKyodev))
-https://www.youtube.com/watch?v=oKp6Xn-8vmg&ab_channel=WilliamKyodev
+Video apresentação: https://www.youtube.com/watch?v=oKp6Xn-8vmg&ab_channel=WilliamKyodev
 <br>
 
