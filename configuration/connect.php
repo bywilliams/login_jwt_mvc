@@ -20,9 +20,8 @@ class Connect
         try 
         {
             $this->connection = new PDO('mysql:host='.host.';dbname='.dbname, user, password, [
-            // retorno da query em forma de objeto
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
-        ]);
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ // retorno da query em forma de objeto
+            ]);
         } 
         catch (PDOException $e) 
         {
@@ -33,4 +32,4 @@ class Connect
 
 }
 
-?>
+

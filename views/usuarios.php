@@ -41,10 +41,10 @@ require_once('utils/gerar_csrf_token.php');
                                 <?= $user->email ?>
                             </td>
                             <td>
-                                <?= date("d-m-Y h:i:s", strtotime($user->created_at)) ?>
+                                <?= date("d-m-Y H:i:s", strtotime($user->created_at)) ?>
                             </td>
                             <td>
-                                <?= date("d-m-Y h:i:s", strtotime($user->updated_at)) ?>
+                                <?= $user->updated_at != "" ? date("d-m-Y H:i:s", strtotime($user->updated_at)) : '' ?>
                             </td>
                             <td>
                                 <div style="display: flex; justify-content: space-evenly">

@@ -50,10 +50,10 @@
 
         function create($formData)
         {
+            // Checa de se usuári ojá existe
+            $this->checkUser($formData["email"]);
 
-            $user = new UserModel();
-            $user->checkUser($formData["email"]);
-
+            // Encripta a senha
             $password = password_hash($formData["password"], PASSWORD_DEFAULT);
 
             $sqlCreate = $this->connection->prepare("INSERT INTO $this->table
