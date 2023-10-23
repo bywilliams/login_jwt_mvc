@@ -21,7 +21,7 @@ Projeto feito totalmente em PHP 8.2 sem uso de nehnhum framework tanto no fronte
 
 ### Explicação do projeto 
 
->A aplicacão é um simples login usando Json Web Token para garantir a segurando da autenticação, então basicamente ao logar primeiramente é checado se o usuário existe no banco de dados e se as senhas  conferem, passando por essa etapa o usuário é autenticado com um JWT com um prazo para expirar e redirecionado para uma dashboard, na páginas seguintes é aplicada uma validação de token para checar a autenticidade do mesmo. Enquanto o token estiver válido o usuário permanece logado, qualquer alteração no token ou expiração do mesmo o usuário é deslogado.  
+>A aplicacão é um simples login usando Json Web Token para garantir a segurando da autenticação, então basicamente ao logar primeiramente é checado se o usuário existe no banco de dados e se as senhas  conferem, passando por essa etapa o usuário é autenticado com um JWT com um prazo para expirar e redirecionado para uma dashboard, na páginas seguintes é aplicada uma validação de token para checar a autenticidade do mesmo. Enquanto o token estiver válido o usuário permanece logado, qualquer alteração no token ou expiração do mesmo (15 minutos) o usuário é deslogado.  
 
 Estrutura completa do projeto
 

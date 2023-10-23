@@ -65,7 +65,7 @@ require_once('utils/gerar_csrf_token.php');
         <?php if($totalPaginas > 1): ?>
         <div class="pagination">
             <?php for ($i = 1; $i <= $totalPaginas; $i++) : ?>
-                <a href="?route=usuarios&page=<?= $i ?>" class="<?= $_GET['page'] == $i ? 'active' : '' ?>"><?= $i ?></a>
+                <a href="?route=usuarios&page=<?= $i ?>" class="<?= $page == $i ? 'active' : '' ?>"><?= $i ?></a>
             <?php endfor; ?>
         </div>
         <?php endif; ?>

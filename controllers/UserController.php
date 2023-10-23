@@ -24,7 +24,7 @@
             $dadosUser = $this->getUserName();
 
             // verifica se token está válido
-            $_SESSION['token'] == $_COOKIE['token'] ? $this->validarToken() : '';
+            isset($_SESSION['token']) == isset($_COOKIE['token']) ? $this->validarToken() : '';
             
             // Chama view dashboard
             require_once('./views/dashboard.php');
@@ -73,7 +73,7 @@
                 // se não passar pela validação da senha apresenta erro, do contrário salva no BD 
                 if(!$this->password_strength($formData['password'])) {
                     $_SESSION['status'] = 'error';
-                    $_SESSION['status_message'] = 'A senha deve ter no minímo 8 caracteres, sendo 1 letra maíscula, 1 numero e 1 simbolo';
+                    $_SESSION['status_message'] = 'A senha deve ter no minímo 8 caracteres, sendo 1 letra maíscula, 1 minúscula, 1 numero e 1 simbolo';
                 } else {
                     $this->model->create($formData);
                 }
