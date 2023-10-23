@@ -8,7 +8,7 @@ Projeto feito totalmente em PHP 8.2 sem uso de nehnhum framework tanto no fronte
 
 ### **Funcionalidades**
 * Login com autenticação JWT
-* Validação de token e tempo de experição
+* Validação de token e tempo de expiração
 * CRUD com POO e MVC
 * CSRF token nos formulários
 * Validação de força de senha e encriptação
