@@ -67,4 +67,6 @@ Agora terá explicação das variáveis utilizadas.
 
 $ git clone https://github.com/bywilliams/login_jwt_mvc.git
 <br>
+[vídeo apresentação]([https://packagist.org/packages/vlucas/phpdotenv](https://www.youtube.com/watch?v=oKp6Xn-8vmg&ab_channel=WilliamKyodev))
+https://www.youtube.com/watch?v=oKp6Xn-8vmg&ab_channel=WilliamKyodev
 <br>
