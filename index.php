@@ -1,5 +1,5 @@
 <?php
-require_once('./controllers/UserController.php');
+require_once('controllers/UserController.php');
 
 // Define um array associativo para mapear rotas e métodos HTTP
 $routes = array(
