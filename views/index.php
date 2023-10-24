@@ -20,11 +20,11 @@
             <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token']?>">
             <div class="form-group">
                 <label for="username">E-mail</label>
-                <input type="text" name="email" value="william@teste.com" required>
+                <input type="text" name="email" value="" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" name="password" value="Orion$97" required>
+                <input type="password" name="password" value="" required>
             </div>
             <button class="btn-submit" type="submit">Login</button>
         </form>
