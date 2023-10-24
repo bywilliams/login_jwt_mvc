@@ -18,10 +18,10 @@ $routes = array(
 );
 
 // Obtem o método HTTP da requisição
-$requestMethod = $_SERVER['REQUEST_METHOD'];
+$requestMethod = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 // Obtem a rota da URL
-$route = !empty($_GET['route']) ? $_GET['route'] : '/';
+$route = !empty($_GET['route']) ? filter_input(INPUT_GET, 'route') : '/';
 
 // Verifica o tipo de requisição e se a rota existe no array de rotas
 if (array_key_exists($route, $routes[$requestMethod]) && array_key_exists($requestMethod, $routes)) {
