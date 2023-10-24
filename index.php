@@ -21,7 +21,8 @@ $routes = array(
 $requestMethod = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 // Obtem a rota da URL
-$route = !empty($_GET['route']) ? filter_input(INPUT_GET, 'route') : '/';
+$route = filter_input(INPUT_GET, 'route');
+$route = !empty($route) ? $route : '/';
 
 // Verifica o tipo de requisição e se a rota existe no array de rotas
 if (array_key_exists($route, $routes[$requestMethod]) && array_key_exists($requestMethod, $routes)) {
