@@ -63,7 +63,7 @@
                 exit;
             }
 
-            $formData = $_POST;
+            $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             $email = $formData['email'];
             $userExists = $this->model->checkUser($email);
 
@@ -95,7 +95,7 @@
             }
 
             // Realiza update
-            $formData = $_POST;
+            $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             $this->model->update($formData);
 
             // chama view usuários
@@ -110,7 +110,7 @@
             }
 
             // Realiza delete
-            $id = $_POST['id'];
+            $id = filter_input(INPUT_POST, 'id');
             $this->model->delete($id);
 
             // Chama view usuários
