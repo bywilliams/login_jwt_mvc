@@ -92,7 +92,7 @@
 
         function validarToken ()
         {
-            $_SESSION['token'] = $_COOKIE['token'];
+            $_SESSION['token'] = filter_input(INPUT_COOKIE, 'token');
 
             $token = $_SESSION['token'];
 
