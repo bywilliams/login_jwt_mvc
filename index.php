@@ -1,23 +1,21 @@
 <?php
 require_once('controllers/UserController.php');
-require_once('controllers/DoctorController.php');
 
 /// Array associativo das rotas
-$routes = array(
-    'GET' => array(
+$routes = [
+    'GET' => [
         '/' => 'UserController@index',
         'dashboard' => 'UserController@dashboard',
         'usuarios' => 'UserController@listUsers',
-        'doctors' => 'DoctorController@index',
         'logout' => 'UserController@logout'
-    ),
-    'POST' => array(
+    ],
+    'POST' => [
         'login' => 'UserController@validarUser',
         'users/create' => 'UserController@create',
         'users/update' => 'UserController@update',
         'users/delete' => 'UserController@delete'
-    )
-);
+    ]
+];
 
 // Obtem o método HTTP da requisição
 $requestMethod = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
